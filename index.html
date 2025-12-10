@@ -52,9 +52,9 @@
         </div>
       </div>
 
-      <!-- Ad 1 -->
+      <!-- Ad 1 (REMOVED old popunder, replaced with safe banner only) -->
       <div class="adbox">
-        <script type="text/javascript" src="//pl28229413.effectivegatecpm.com/34/2c/69/342c694bdb37ab1ef58c180793f94a90.js"></script>
+        <!-- old popunder removed -->
       </div>
 
       <!-- Ad 2 -->
@@ -77,7 +77,7 @@
         <div id="container-fe8d60f38d9d831b2dd5ba03e21b662e"></div>
       </div>
 
-      <!-- Ad 4 -->
+      <!-- Ad 4 (Smartlink iframe safe) -->
       <div class="adbox">
         <iframe src="https://www.effectivegatecpm.com/mh6geqw62x?key=f685f16dc8a5f8a59568415e00c4eb12" width="100%" height="90" style="border:none;"></iframe>
       </div>
@@ -125,26 +125,12 @@
   function showResult(a,b,pc){
     resultEl.style.display='flex';
     let start=0; const dur=700; const startTime=performance.now();
-    function tick(now){const t=Math.min(1,(now-startTime)/dur); const val=Math.floor(start+(pc-start)*t); meter.textContent=val+'%'; if(t<1) requestAnimationFrame(tick);}
+    function tick(now){const t=Math.min(1,(now-startTime)/dur); const val=Math.floor(start+(pc-start)*t); meter.textContent=val+'%'; if(t<1) requestAnimationFrame(tick);} 
     requestAnimationFrame(tick);
     headline.textContent=`${a.trim()||'---'} ❤ ${b.trim()||'---'} = ${pc}%`;
     sub.textContent=messageFor(pc);
     try{localStorage.setItem('love_last',JSON.stringify({a,b,pc,at:Date.now()}));}catch(e){}
   }
 
-  calcBtn.onclick=()=>{const a=nameA.value; const b=nameB.value; if(!normalize(a)&&!normalize(b)){alert("Don't be shy — enter at least one name."); return;} const pc=lovePercent(a,b); showResult(a,b,pc);}
-  randomBtn.onclick=()=>{const names=['Aarav','Ananya','Rahul','Priya','Aryan','Sana','Karan','Isha','Rohan','Neha','Vikram','Simran']; nameA.value=names[Math.floor(Math.random()*names.length)]; nameB.value=names[Math.floor(Math.random()*names.length)]; calcBtn.click();}
-  clearBtn.onclick=()=>{nameA.value=''; nameB.value=''; resultEl.style.display='none';}
-  shareBtn.onclick=()=>{const a=nameA.value||'--'; const b=nameB.value||'--'; const pcText=meter.textContent||'0%'; const text=`Love%: ${a} ❤ ${b} = ${pcText} — Try on this Love Calculator!`; navigator.clipboard?.writeText(text).then(()=>{alert('Result copied to clipboard — paste anywhere to share!');}).catch(()=>{prompt('Copy this result:', text);});}
-
-  (function(){try{const last=JSON.parse(localStorage.getItem('love_last')); if(last){nameA.value=last.a; nameB.value=last.b; showResult(last.a,last.b,last.pc);}}catch(e){}})();
-</script>
-
-<!-- ⭐ POPUNDER + ANTI-ADBLOCK (CORRECT PLACEMENT) -->
-<script
-  type="text/javascript"
-  src="//announcingmyrtleusual.com/34/2c/69/342c694bdb37ab1ef58c180793f94a90.js"
-></script>
-
-</body>
-</html>
+  calcBtn.onclick=()=>{const a=nameA.value; const b=nameB.value; if(!normalize(a)&&!normalize(b)){alert("Don't be shy — enter at least one name."); return;} const pc=lovePercent(a,b); showResult(a,b,pc);} 
+  randomBtn.onclick=()=>{const names=['Aarav','Ananya','Rahul','Priya','Aryan','Sana','Karan','Isha','Rohan','Neha','Vikram','Simran']; name

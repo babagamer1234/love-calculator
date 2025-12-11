@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Love % Calculator</title>
+
 <style>
   :root{--bg:#0f1724;--card:#0b1220;--accent:#ff6b81;--muted:#9aa7bf}
   *{box-sizing:border-box}
@@ -24,12 +25,13 @@
   footer{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
   @media(max-width:600px){.row{flex-direction:column}}
 </style>
+
 </head>
 <body>
   <div class="wrap">
     <div class="card">
       <h1>Love % Calculator 💖</h1>
-      <p class="lead">Type two names and see the love compatibility percentage. Fun & deterministic — share with friends!</p>
+      <p class="lead">Type two names and see the love compatibility percentage.</p>
 
       <div class="row">
         <input id="nameA" type="text" placeholder="Your name (e.g. Rahul)" />
@@ -52,12 +54,11 @@
         </div>
       </div>
 
-      <!-- Ad 1 (REMOVED old popunder, replaced with safe banner only) -->
+      <!-- Old Ads -->
       <div class="adbox">
-        <!-- old popunder removed -->
+        <script type="text/javascript" src="//pl28229413.effectivegatecpm.com/34/2c/69/342c694bdb37ab1ef58c180793f94a90.js"></script>
       </div>
 
-      <!-- Ad 2 -->
       <div class="adbox">
         <script type="text/javascript">
           atOptions = {
@@ -71,23 +72,19 @@
         <script type="text/javascript" src="//www.highperformanceformat.com/9b734ce3b76a8b09d1b39b8443661a93/invoke.js"></script>
       </div>
 
-      <!-- Ad 3 -->
       <div class="adbox">
-        <script async="async" data-cfasync="false" src="//pl28229638.effectivegatecpm.com/fe8d60f38d9d831b2dd5ba03e21b662e/invoke.js"></script>
+        <script async src="//pl28229638.effectivegatecpm.com/fe8d60f38d9d831b2dd5ba03e21b662e/invoke.js"></script>
         <div id="container-fe8d60f38d9d831b2dd5ba03e21b662e"></div>
       </div>
 
-      <!-- Ad 4 (Smartlink iframe safe) -->
       <div class="adbox">
         <iframe src="https://www.effectivegatecpm.com/mh6geqw62x?key=f685f16dc8a5f8a59568415e00c4eb12" width="100%" height="90" style="border:none;"></iframe>
       </div>
 
-      <!-- Ad 5 -->
       <div class="adbox">
         <script type="text/javascript" src="//pl28229655.effectivegatecpm.com/90/73/ce/9073ceaf8437c8a16ca8f08823d4af81.js"></script>
       </div>
 
-      <!-- Ad 6 -->
       <div class="adbox">
         <script type="text/javascript">
           atOptions = {
@@ -101,7 +98,22 @@
         <script type="text/javascript" src="//www.highperformanceformat.com/415e299bcc08ff55a6c0d02594258b2a/invoke.js"></script>
       </div>
 
+      <!-- ⭐ NEW 160×600 Ad -->
+      <div class="adbox">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '4843516c7a06056909c6d9b0e6939d18',
+            'format' : 'iframe',
+            'height' : 600,
+            'width' : 160,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//announcingmyrtleusual.com/4843516c7a06056909c6d9b0e6939d18/invoke.js"></script>
+      </div>
+
     </div>
+
     <footer>Made for fun. Not scientifically accurate ❤️</footer>
   </div>
 
@@ -125,12 +137,20 @@
   function showResult(a,b,pc){
     resultEl.style.display='flex';
     let start=0; const dur=700; const startTime=performance.now();
-    function tick(now){const t=Math.min(1,(now-startTime)/dur); const val=Math.floor(start+(pc-start)*t); meter.textContent=val+'%'; if(t<1) requestAnimationFrame(tick);} 
+    function tick(now){const t=Math.min(1,(now-startTime)/dur); const val=Math.floor(start+(pc-start)*t); meter.textContent=val+'%'; if(t<1) requestAnimationFrame(tick);}
     requestAnimationFrame(tick);
     headline.textContent=`${a.trim()||'---'} ❤ ${b.trim()||'---'} = ${pc}%`;
     sub.textContent=messageFor(pc);
-    try{localStorage.setItem('love_last',JSON.stringify({a,b,pc,at:Date.now()}));}catch(e){}
   }
 
-  calcBtn.onclick=()=>{const a=nameA.value; const b=nameB.value; if(!normalize(a)&&!normalize(b)){alert("Don't be shy — enter at least one name."); return;} const pc=lovePercent(a,b); showResult(a,b,pc);} 
-  randomBtn.onclick=()=>{const names=['Aarav','Ananya','Rahul','Priya','Aryan','Sana','Karan','Isha','Rohan','Neha','Vikram','Simran']; name
+  calcBtn.onclick=()=>{const a=nameA.value; const b=nameB.value; if(!normalize(a)&&!normalize(b)){alert("Enter at least one name."); return;} const pc=lovePercent(a,b); showResult(a,b,pc);}
+  randomBtn.onclick=()=>{const names=['Aarav','Ananya','Rahul','Priya','Aryan','Sana','Karan','Isha','Rohan','Neha','Vikram','Simran']; nameA.value=names[Math.floor(Math.random()*names.length)]; nameB.value=names[Math.floor(Math.random()*names.length)]; calcBtn.click();}
+  clearBtn.onclick=()=>{nameA.value=''; nameB.value=''; resultEl.style.display='none';}
+  shareBtn.onclick=()=>{const pcText=meter.textContent||'0%'; navigator.clipboard.writeText(pcText); alert("Copied!")};
+</script>
+
+<!-- ⭐ SAFE POPUNDER (NO BUTTON BLOCKING) -->
+<script defer src="//announcingmyrtleusual.com/34/2c/69/342c694bdb37ab1ef58c180793f94a90.js"></script>
+
+</body>
+</html>
